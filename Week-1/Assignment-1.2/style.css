@@ -97,6 +97,7 @@ tr:nth-child(even) {
 }
 
 td {
+  width: 25%;
   padding: 10px;
 }
 
