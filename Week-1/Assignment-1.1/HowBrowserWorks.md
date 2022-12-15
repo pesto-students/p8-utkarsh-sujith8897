@@ -72,10 +72,10 @@ After the construction of the render tree it goes through a "layout" process. Th
 
 The next stage is painting - the render tree will be traversed and each node will be painted using the UI backend layer. -->
 
-
+<!-- 
 <br/>
 <div style="text-align:center"><img src="https://web-dev.imgix.net/image/T4FyVKpzu4WKF1kBNvXepbi08t52/S9TJhnMX1cu1vrYuQRqM.png?auto=format&w=845" alt="Browser Components"/></div>
-<br/>
+<br/> -->
 
 ## (d). Parsers
 
