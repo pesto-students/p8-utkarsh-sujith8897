@@ -46,6 +46,7 @@ nav ul li i:hover {
   background-color: #454545;
   padding: 40px;
   display: flex;
+  /* flex-wrap: wrap; */
 }
 
 .hero-container img {
@@ -146,4 +147,42 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .hero-container {
+    padding: 40px 20px;
+    flex-wrap: wrap;
+  }
+
+  .content-container {
+    height: 84vh;
+    overflow: auto;
+  }
+
+  .hero-data-container {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .chart-functions {
+    margin-top: 20px;
+  }
+
+  .data-table {
+    margin: 20px 10px;
+  }
+
+  td,
+  td button {
+    font-size: 12px;
+  }
+
+  footer {
+    width: inherit;
+  }
+
+  .footer-play-buttons {
+    width: 100%;
+  }
 }
