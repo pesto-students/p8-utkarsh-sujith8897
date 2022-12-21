@@ -49,6 +49,7 @@ body {
 
 h1 {
   text-align: center;
+  color: #0f2b5a;
 }
 
 .articles {
@@ -56,7 +57,7 @@ h1 {
 }
 
 .articles > div {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .article-image-container {
@@ -86,6 +87,8 @@ h1 {
 
 .article-text a {
   text-decoration: none;
+  color: #0a589d;
+  font-weight: bold;
 }
 
 .form-container {
