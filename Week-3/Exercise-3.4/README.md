@@ -6,7 +6,7 @@ function createStack() {
             this.items.push(item)
         },
         pop() {
-            this.item.pop()
+            return this.item.pop()
         }
     }
 }
