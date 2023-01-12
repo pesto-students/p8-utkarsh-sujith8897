@@ -1,17 +1,17 @@
-async function doTask1() {
+function doTask1() {
   return "Task 1 Completed";
 }
 
-async function doTask2() {
+function doTask2() {
   return "Task 2 Completed";
 }
 
-async function doTask3() {
-  return "Task 3 Completed";
+function doTask3() {
+  return "Task 3 Completed \n";
 }
 
 async function AsyncAwait() {
-  console.log("=> using async/await");
+  console.log("\n=> using async/await");
   const task1 = await doTask1();
   console.log(task1);
 
