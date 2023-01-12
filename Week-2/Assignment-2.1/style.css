@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0px;
+}
+
+body {
+  background-color: aliceblue;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* font-family: monospace; */
+}
+
+.content {
+  padding: 15px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  color: #0f2b5a;
+}
+
+.articles {
+  margin-top: 50px;
+}
+
+.articles > div {
+  margin-bottom: 50px;
+}
+
+.article-image-container {
+  width: 25%;
+}
+
+.article-image-container img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.article-text {
+  width: 40%;
+  margin-left: 40px;
+}
+
+.article-text h3 {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.article-text div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.article-text a {
+  text-decoration: none;
+  color: #0a589d;
+  font-weight: bold;
+}
+
+.form-container {
+  /* background-color: blue; */
+  /* padding: 10px; */
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.form-container > div {
+  width: 30%;
+}
+
+form {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+    rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+  padding: 10px 30px;
+}
+
+form > div {
+  /* display: flex;
+  justify-content: center; */
+  margin: 20px 0;
+  /* width: 100%; */
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+form label {
+  /* min-width: 10%; */
+  /* max-width: 20%; */
+  /* width: 30%; */
+  display: inline-block;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
+form select {
+  width: 100%;
+  padding: 3px 0;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+  display: block;
+  text-indent: 5px;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="password"]:focus,
+form select:focus {
+  border: 2px solid #1e88e5;
+}
+
+form button {
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  padding: 8px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0a589d;
+}
+
+footer {
+  background-color: #0f2b5a;
+  color: #fff;
+  min-height: 60px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .article-image-container,
+  .article-text {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .articles > div {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .article-image-container,
+  .article-text {
+    width: 85%;
+  }
+
+  .article-text {
+    margin-left: 0;
+  }
+
+  .article-text h3 {
+    margin-top: 20px;
+  }
+
+  .article-text div {
+    justify-content: flex-start;
+  }
+
+  .form-container > div {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    flex-direction: column;
+  }
+
+  .form-container > div {
+    width: 90%;
+  }
+}
