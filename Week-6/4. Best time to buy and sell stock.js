@@ -1,3 +1,4 @@
+// time: O(n), space: O(1)
 function buySell(arr) {
   if (arr.length === 0) return 0;
   let maxProfit = 0,

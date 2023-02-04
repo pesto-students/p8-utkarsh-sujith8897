@@ -1,3 +1,4 @@
+// time: O(n), space: O(n)
 function PairDiff(arr, k) {
   const m = {};
   for (let i = 0; i < arr.length; i++) {

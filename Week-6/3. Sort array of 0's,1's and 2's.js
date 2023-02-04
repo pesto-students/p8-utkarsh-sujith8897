@@ -1,3 +1,4 @@
+// time: O(n), space: O(1)
 function Sort(arr) {
   let low = 0,
     high = arr.length - 1,
