@@ -1,3 +1,4 @@
+// time: O(n*n), space: O(1)
 function SpiralOrderMatrix(matrix) {
   let arr = [];
   let r = matrix.length;
