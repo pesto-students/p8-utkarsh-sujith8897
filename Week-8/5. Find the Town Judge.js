@@ -1,12 +1,12 @@
-var findJudge = function (n, trust) {
+var findJudge = function (n, trusts) {
   let graph = [];
   for (let i = 0; i < n; i++) {
     graph.push(0);
   }
-  for (const t of trust) {
-    graph[t[0] - 1] = -1;
-    if (graph[t[1] - 1] != -1) {
-      graph[t[1] - 1] += 1;
+  for (const trust of trusts) {
+    graph[trust[0] - 1] = -1;
+    if (graph[trust[1] - 1] != -1) {
+      graph[trust[1] - 1] += 1;
     }
   }
   for (let i = 0; i < n; i++) {
