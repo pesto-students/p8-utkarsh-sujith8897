@@ -1,24 +1,6 @@
 import React, { useState } from "react";
 import "./Todo.style.css";
-
-const TODO_LIST = [
-  {
-    task: "Sample Test One",
-    isCompleted: false,
-  },
-  {
-    task: "Sample Test Two",
-    isCompleted: false,
-  },
-  {
-    task: "Sample Test Three",
-    isCompleted: false,
-  },
-  {
-    task: "Sample Test Four",
-    isCompleted: false,
-  },
-];
+import { SortableItem } from "../../SortableItem";
 
 function compare(a, b) {
   if (a.isCompleted) {
@@ -27,28 +9,28 @@ function compare(a, b) {
   return -1;
 }
 
-export const Todo = () => {
-  const [todoList, setTodoList] = useState(TODO_LIST);
+export const Todo = (props) => {
   const [task, setTask] = useState("");
+  const { todoList, handleTaskCompleted, handleAddTask } = props;
 
-  const handleAddTask = (e) => {
+  // console.log({ handleTaskCompleted });
+
+  const handleAdd = (e) => {
     e.preventDefault();
     if (!task.length) return alert("Task cannot be empty");
-    setTodoList([{ task, isCompleted: false }, ...todoList]);
+    handleAddTask(task);
     setTask("");
   };
 
-  const handleTaskCompleted = (index) => {
-    let updatedList = [...todoList];
-    updatedList[index].isCompleted = !updatedList[index].isCompleted;
-    console.log({ index, updatedList });
-    setTodoList(updatedList);
+  const handleComp = (index) => {
+    console.log({ index });
+    handleTaskCompleted(index);
   };
 
   return (
     <div>
       <div className="add-container">
-        <form onSubmit={handleAddTask}>
+        <form onSubmit={handleAdd}>
           <input
             type="text"
             placeholder="Enter your task"
@@ -58,28 +40,23 @@ export const Todo = () => {
           <button type="submit">Add</button>
         </form>
       </div>
-      <div>
-        {todoList?.sort?.(compare)?.map?.((todo, index) => (
-          <div
-            key={index}
-            className="task"
-            onClick={() => handleTaskCompleted(index)}
-          >
-            <input
-              type="checkbox"
-              checked={todo?.isCompleted}
-              onClick={() => handleTaskCompleted(index)}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        {todoList
+          ?.sort?.(compare)
+          // ?.slice?.(0, 1)
+          ?.map?.((todo, index) => (
+            <SortableItem
+              key={index}
+              index={todo?.id}
+              handleTaskCompleted={handleComp}
+              todo={todo}
             />
-            <label
-              style={{
-                textDecoration: todo?.isCompleted ? "line-through" : "none",
-                color: todo?.isCompleted ? "#666" : "#444",
-              }}
-            >
-              {todo?.task}
-            </label>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
