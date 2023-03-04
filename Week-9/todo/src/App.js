@@ -1,16 +1,3 @@
-// import "./App.css";
-// import { Todo } from "./components/Todo/Todo";
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Todo />
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import React, { useState } from "react";
 import "./App.css";
 import { Todo } from "./components/Todo/Todo";
@@ -111,58 +98,3 @@ function App() {
 }
 
 export default App;
-
-// import React, { useState } from "react";
-// import {
-//   DndContext,
-//   closestCenter,
-//   KeyboardSensor,
-//   PointerSensor,
-//   useSensor,
-//   useSensors,
-// } from "@dnd-kit/core";
-// import {
-//   arrayMove,
-//   SortableContext,
-//   sortableKeyboardCoordinates,
-//   verticalListSortingStrategy,
-// } from "@dnd-kit/sortable";
-
-// import { SortableItem } from "./SortableItem";
-
-// export default function App() {
-//   const [items, setItems] = useState([{ id: 0 }, { id: 1 }, { id: 2 }]);
-//   const sensors = useSensors(
-//     useSensor(PointerSensor),
-//     useSensor(KeyboardSensor, {
-//       coordinateGetter: sortableKeyboardCoordinates,
-//     })
-//   );
-
-//   return (
-//     <DndContext
-//       sensors={sensors}
-//       collisionDetection={closestCenter}
-//       onDragEnd={handleDragEnd}
-//     >
-//       <SortableContext items={items} strategy={verticalListSortingStrategy}>
-//         {items.map((obj, id) => (
-//           <SortableItem key={id} id={obj.id} />
-//         ))}
-//       </SortableContext>
-//     </DndContext>
-//   );
-
-//   function handleDragEnd(event) {
-//     const { active, over } = event;
-
-//     if (active.id !== over.id) {
-//       setItems((items) => {
-//         const oldIndex = items.findIndex((item) => item.id === active.id);
-//         const newIndex = items.findIndex((item) => item.id === over.id);
-
-//         return arrayMove(items, oldIndex, newIndex);
-//       });
-//     }
-//   }
-// }

@@ -13,8 +13,6 @@ export const Todo = (props) => {
   const [task, setTask] = useState("");
   const { todoList, handleTaskCompleted, handleAddTask } = props;
 
-  // console.log({ handleTaskCompleted });
-
   const handleAdd = (e) => {
     e.preventDefault();
     if (!task.length) return alert("Task cannot be empty");
@@ -23,7 +21,6 @@ export const Todo = (props) => {
   };
 
   const handleComp = (index) => {
-    console.log({ index });
     handleTaskCompleted(index);
   };
 
@@ -46,17 +43,14 @@ export const Todo = (props) => {
           flexDirection: "column",
         }}
       >
-        {todoList
-          ?.sort?.(compare)
-          // ?.slice?.(0, 1)
-          ?.map?.((todo, index) => (
-            <SortableItem
-              key={index}
-              index={todo?.id}
-              handleTaskCompleted={handleComp}
-              todo={todo}
-            />
-          ))}
+        {todoList?.sort?.(compare)?.map?.((todo, index) => (
+          <SortableItem
+            key={index}
+            index={todo?.id}
+            handleTaskCompleted={handleComp}
+            todo={todo}
+          />
+        ))}
       </div>
     </div>
   );

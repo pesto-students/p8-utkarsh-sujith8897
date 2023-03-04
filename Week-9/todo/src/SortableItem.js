@@ -13,12 +13,6 @@ export function SortableItem(props) {
 
   const { handleTaskCompleted, todo, index } = props;
 
-  console.log({ todo });
-
-  const handleComp = (index) => {
-    console.log({ index });
-  };
-
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
       <div className="task">
@@ -26,7 +20,6 @@ export function SortableItem(props) {
           type="checkbox"
           checked={todo?.isCompleted}
           onChange={() => handleTaskCompleted(index)}
-          // onChange={() => handleComp(index)}
         />
         <label
           style={{
