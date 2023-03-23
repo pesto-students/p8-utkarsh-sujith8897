@@ -10,6 +10,7 @@ import { About } from "./Components/NavBar/About";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
+  const email = "sujithkumar8897@gmail.com";
   return (
     <>
       <NavBar />
@@ -40,7 +41,7 @@ function App() {
             element={
               <>
                 <BackgroundAnimate />
-                <Contact />
+                <Contact email={email} />
               </>
             }
           />
