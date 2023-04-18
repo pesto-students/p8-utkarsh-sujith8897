@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as counterActionCreators from "./action/counter.action";
 
 function App() {
+  const dispatch = useDispatch();
+  const { addStep, resetSteps } = bindActionCreators(
+    counterActionCreators,
+    dispatch
+  );
+  const { counter } = useSelector((state) => state.counter);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>You've walked {counter} steps today!</h2>
+      <button className="add-step" onClick={() => addStep()}>
+        Add a step
+      </button>
+      <button onClick={() => resetSteps()}>Reset steps</button>
     </div>
   );
 }
